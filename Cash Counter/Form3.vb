@@ -1,5 +1,5 @@
-﻿Public Class Form2
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+﻿Public Class Form3
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         select_row(1)
         Me.Text = "Cash Count  v" & My.Application.Info.Version.Major.ToString & "." & My.Application.Info.Version.Minor.ToString & "." & My.Application.Info.Version.Revision.ToString
     End Sub
@@ -59,89 +59,202 @@
         End If
 
     End Sub
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        select_row(1)
+    End Sub
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        select_row(2)
+    End Sub
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        select_row(3)
+    End Sub
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        select_row(4)
+    End Sub
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        select_row(5)
+    End Sub
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        select_row(6)
+    End Sub
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        select_row(7)
+    End Sub
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
+        select_row(8)
+    End Sub
+    Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
+        select_row(9)
+    End Sub
+    Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
+        select_row(10)
+    End Sub
+    Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
+        select_row(11)
+    End Sub
+    Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
+        select_row(12)
+    End Sub
+    Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click
+        select_row(13)
+    End Sub
+    Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
+        select_row(14)
+    End Sub
+    Private Sub Form3_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+
+        Select Case e.KeyCode
+            Case Keys.NumPad1
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "1"
+            Case Keys.NumPad2
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "2"
+            Case Keys.NumPad3
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "3"
+            Case Keys.NumPad4
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "4"
+            Case Keys.NumPad5
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "5"
+            Case Keys.NumPad6
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "6"
+            Case Keys.NumPad7
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "7"
+            Case Keys.NumPad8
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "8"
+            Case Keys.NumPad9
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "9"
+            Case Keys.NumPad0
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "0"
+            Case Keys.D1
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "1"
+            Case Keys.D2
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "2"
+            Case Keys.D3
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "3"
+            Case Keys.D4
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "4"
+            Case Keys.D5
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "5"
+            Case Keys.D6
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "6"
+            Case Keys.D7
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "7"
+            Case Keys.D8
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "8"
+            Case Keys.D9
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "9"
+            Case Keys.D0
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "0"
+            Case Keys.Decimal
+                If cashcount1.Text = "0" Then cashcount1.Text = ""
+                cashcount1.Text = cashcount1.Text + "."
+            Case Keys.Enter
+                add_new()
+        End Select
 
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        If cashcount1.Text = "0" Then cashcount1.Text = ""
-        cashcount1.Text = cashcount1.Text + "1"
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles but7.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "7"
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles but8.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "8"
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles but9.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "9"
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles but4.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "4"
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles but5.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "5"
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles but6.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "6"
     End Sub
 
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles but1.Click
+        If cashcount1.Text = "0" Then cashcount1.Text = ""
+        cashcount1.Text = cashcount1.Text + "1"
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles but2.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "2"
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles but3.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "3"
     End Sub
 
-    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles but0.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "0"
     End Sub
 
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles butpoint.Click
         If cashcount1.Text = "0" Then cashcount1.Text = ""
         cashcount1.Text = cashcount1.Text + "."
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles butback.Click
         cashcount1.Text = cashcount1.Text.Remove(cashcount1.Text.Length - 1)
         If cashcount1.Text.Length = 0 Then
             cashcount1.Text = "0"
         End If
     End Sub
     Private Sub add_new()
-        If Label1.Text = "ENTER THE NUMBER OF $100 NOTES" Then
+        If label1.Text = "ENTER THE NUMBER OF $100 NOTES" Then
             GlobalVariables.note_100 = cashcount1.Text
             count1.Text = String.Format("{0:C2}", CDec(GlobalVariables.note_100 * 100))
             select_row(2)
             Exit Sub
         End If
-        If Label1.Text = "ENTER THE NUMBER OF $50 NOTES" Then
+        If label1.Text = "ENTER THE NUMBER OF $50 NOTES" Then
             GlobalVariables.note_50 = cashcount1.Text
             count2.Text = String.Format("{0:C2}", CDec(GlobalVariables.note_50 * 50))
             select_row(3)
             Exit Sub
         End If
-        If Label1.Text = "ENTER THE NUMBER OF $20 NOTES" Then
+        If label1.Text = "ENTER THE NUMBER OF $20 NOTES" Then
             GlobalVariables.note_20 = cashcount1.Text
             count3.Text = String.Format("{0:C2}", CDec(GlobalVariables.note_20 * 20))
             select_row(4)
             Exit Sub
         End If
-        If Label1.Text = "ENTER THE NUMBER OF $10 NOTES" Then
+        If label1.Text = "ENTER THE NUMBER OF $10 NOTES" Then
             GlobalVariables.note_10 = cashcount1.Text
             count4.Text = String.Format("{0:C2}", CDec(GlobalVariables.note_10 * 10))
             select_row(5)
@@ -220,51 +333,9 @@
         End If
 
     End Sub
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
-        add_new()
 
-    End Sub
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        select_row(1)
-    End Sub
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        select_row(2)
-    End Sub
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        select_row(3)
-    End Sub
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        select_row(4)
-    End Sub
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
-        select_row(5)
-    End Sub
-    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
-        select_row(6)
-    End Sub
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
-        select_row(7)
-    End Sub
-    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
-        select_row(8)
-    End Sub
-    Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
-        select_row(9)
-    End Sub
-    Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
-        select_row(10)
-    End Sub
-    Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
-        select_row(11)
-    End Sub
-    Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
-        select_row(12)
-    End Sub
-    Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click
-        select_row(13)
-    End Sub
-    Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
-        select_row(14)
+    Private Sub Label16_Click(sender As Object, e As EventArgs) Handles butadd.Click
+        add_new()
     End Sub
     Private Sub select_row(i As Integer)
         clear_all()
@@ -374,11 +445,15 @@
 
     Private Sub PictureBox17_Click(sender As Object, e As EventArgs) Handles PictureBox17.Click
         reset_all()
-        Form3.Show()
-
-
     End Sub
 
+    Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
+        reset_all()
+    End Sub
+
+    Private Sub PictureBox19_Click(sender As Object, e As EventArgs) Handles PictureBox19.Click
+        Me.Close()
+    End Sub
     Private Sub reset_all()
         clear_all()
         Label1.Text = "ENTER THE NUMBER OF $100 NOTES"
@@ -413,23 +488,6 @@
         total_info.Text = ""
         check_line.Text = ""
     End Sub
-
-    Private Sub PictureBox19_Click(sender As Object, e As EventArgs) Handles PictureBox19.Click
-        Me.Close()
-    End Sub
-
-    Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
-        reset_all()
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles check_line.Click
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
 
         Dim blackPen As New Pen(Color.Black, 2)
@@ -538,137 +596,15 @@
         e.Graphics.DrawLine(blackPen, point3, point4)
         e.Graphics.DrawString(" ", ReportFontBold, Brushes.Black, left1 + 170, 620)
     End Sub
-
     Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
         If total_info.Text <> " " Then
             Dim printerName As String
-            printerName = "SAM4S ELLIX30"
+            'printerName = "SAM4S ELLIX30"
+            printerName = "EPSON TM-T88V Receipt"
             PrintDocument1.PrinterSettings.PrinterName = printerName
             PrintDocument1.Print()
         Else
             MsgBox("You need to balance the POS before printing")
-        End If
-
-    End Sub
-
-    Private Sub title1_Click(sender As Object, e As EventArgs) Handles title1.Click
-        select_row(1)
-    End Sub
-
-    Private Sub count1_Click(sender As Object, e As EventArgs) Handles count1.Click
-        select_row(1)
-    End Sub
-
-    Private Sub title2_Click(sender As Object, e As EventArgs) Handles title2.Click
-        select_row(2)
-    End Sub
-
-    Private Sub count2_Click(sender As Object, e As EventArgs) Handles count2.Click
-        select_row(2)
-    End Sub
-
-    Private Sub title3_Click(sender As Object, e As EventArgs) Handles title3.Click
-        select_row(3)
-    End Sub
-
-    Private Sub count3_Click(sender As Object, e As EventArgs) Handles count3.Click
-        select_row(3)
-    End Sub
-
-    Private Sub title4_Click(sender As Object, e As EventArgs) Handles title4.Click
-        select_row(4)
-    End Sub
-
-    Private Sub count4_Click(sender As Object, e As EventArgs) Handles count4.Click
-        select_row(4)
-    End Sub
-
-    Private Sub title5_Click(sender As Object, e As EventArgs) Handles title5.Click
-        select_row(5)
-    End Sub
-
-    Private Sub count5_Click(sender As Object, e As EventArgs) Handles count5.Click
-        select_row(5)
-    End Sub
-
-    Private Sub title6_Click(sender As Object, e As EventArgs) Handles title6.Click
-        select_row(6)
-    End Sub
-
-    Private Sub count6_Click(sender As Object, e As EventArgs) Handles count6.Click
-        select_row(6)
-    End Sub
-
-    Private Sub title7_Click(sender As Object, e As EventArgs) Handles title7.Click
-        select_row(7)
-    End Sub
-
-    Private Sub count7_Click(sender As Object, e As EventArgs) Handles count7.Click
-        select_row(7)
-    End Sub
-
-    Private Sub title8_Click(sender As Object, e As EventArgs) Handles title8.Click
-        select_row(8)
-    End Sub
-
-    Private Sub count8_Click(sender As Object, e As EventArgs) Handles count8.Click
-        select_row(8)
-    End Sub
-
-    Private Sub title9_Click(sender As Object, e As EventArgs) Handles title9.Click
-        select_row(9)
-    End Sub
-
-    Private Sub count9_Click(sender As Object, e As EventArgs) Handles count9.Click
-        select_row(9)
-    End Sub
-
-    Private Sub title10_Click(sender As Object, e As EventArgs) Handles title10.Click
-        select_row(10)
-    End Sub
-
-    Private Sub count10_Click(sender As Object, e As EventArgs) Handles count10.Click
-        select_row(10)
-    End Sub
-
-    Private Sub title11_Click(sender As Object, e As EventArgs) Handles title11.Click
-        select_row(11)
-    End Sub
-
-    Private Sub count11_Click(sender As Object, e As EventArgs) Handles count11.Click
-        select_row(11)
-    End Sub
-
-    Private Sub title12_Click(sender As Object, e As EventArgs) Handles title12.Click
-        select_row(12)
-    End Sub
-
-    Private Sub count12_Click(sender As Object, e As EventArgs) Handles count12.Click
-        select_row(12)
-    End Sub
-
-    Private Sub title13_Click(sender As Object, e As EventArgs) Handles title13.Click
-        select_row(13)
-    End Sub
-
-    Private Sub count13_Click(sender As Object, e As EventArgs) Handles count13.Click
-        select_row(13)
-    End Sub
-
-    Private Sub title14_Click(sender As Object, e As EventArgs) Handles title14.Click
-        select_row(14)
-    End Sub
-
-    Private Sub count14_Click(sender As Object, e As EventArgs) Handles count14.Click
-        select_row(14)
-    End Sub
-
-    Private Sub Form2_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = Keys.Return Then
-            MsgBox("enter key")
-        End If
-        If e.KeyCode = Keys.NumPad1 Then
-            MsgBox("1")
         End If
 
     End Sub
