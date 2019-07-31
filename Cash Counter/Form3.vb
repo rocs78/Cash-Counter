@@ -1,7 +1,9 @@
-﻿Public Class Form3
+﻿Imports System.Deployment.Application
+Public Class Form3
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         select_row(1)
         Me.Text = "Cash Count  v" & My.Application.Info.Version.Major.ToString & "." & My.Application.Info.Version.Minor.ToString & "." & My.Application.Info.Version.Revision.ToString
+
     End Sub
     Public Class GlobalVariables
         Public Shared note_100 As Integer
@@ -169,6 +171,12 @@
                 cashcount1.Text = cashcount1.Text + "."
             Case Keys.Enter
                 add_new()
+            Case Keys.Back
+                cashcount1.Text = cashcount1.Text.Remove(cashcount1.Text.Length - 1)
+                If cashcount1.Text.Length = 0 Then
+                    cashcount1.Text = "0"
+                End If
+
         End Select
 
 
@@ -236,25 +244,25 @@
         End If
     End Sub
     Private Sub add_new()
-        If label1.Text = "ENTER THE NUMBER OF $100 NOTES" Then
+        If Label1.Text = "ENTER THE NUMBER OF $100 NOTES" Then
             GlobalVariables.note_100 = cashcount1.Text
             count1.Text = String.Format("{0:C2}", CDec(GlobalVariables.note_100 * 100))
             select_row(2)
             Exit Sub
         End If
-        If label1.Text = "ENTER THE NUMBER OF $50 NOTES" Then
+        If Label1.Text = "ENTER THE NUMBER OF $50 NOTES" Then
             GlobalVariables.note_50 = cashcount1.Text
             count2.Text = String.Format("{0:C2}", CDec(GlobalVariables.note_50 * 50))
             select_row(3)
             Exit Sub
         End If
-        If label1.Text = "ENTER THE NUMBER OF $20 NOTES" Then
+        If Label1.Text = "ENTER THE NUMBER OF $20 NOTES" Then
             GlobalVariables.note_20 = cashcount1.Text
             count3.Text = String.Format("{0:C2}", CDec(GlobalVariables.note_20 * 20))
             select_row(4)
             Exit Sub
         End If
-        If label1.Text = "ENTER THE NUMBER OF $10 NOTES" Then
+        If Label1.Text = "ENTER THE NUMBER OF $10 NOTES" Then
             GlobalVariables.note_10 = cashcount1.Text
             count4.Text = String.Format("{0:C2}", CDec(GlobalVariables.note_10 * 10))
             select_row(5)
@@ -608,4 +616,106 @@
         End If
 
     End Sub
+
+    Private Sub Title1_Click(sender As Object, e As EventArgs) Handles title1.Click
+        select_row(1)
+    End Sub
+
+    Private Sub Count1_Click(sender As Object, e As EventArgs) Handles count1.Click
+        select_row(1)
+    End Sub
+
+    Private Sub Title2_Click(sender As Object, e As EventArgs) Handles title2.Click
+        select_row(2)
+    End Sub
+
+    Private Sub Count2_Click(sender As Object, e As EventArgs) Handles count2.Click
+        select_row(2)
+    End Sub
+
+    Private Sub Title3_Click(sender As Object, e As EventArgs) Handles title3.Click
+        select_row(3)
+    End Sub
+
+    Private Sub Count3_Click(sender As Object, e As EventArgs) Handles count3.Click
+        select_row(3)
+    End Sub
+    Private Sub Title4_Click(sender As Object, e As EventArgs) Handles title4.Click
+        select_row(4)
+    End Sub
+
+    Private Sub Count4_Click(sender As Object, e As EventArgs) Handles count4.Click
+        select_row(4)
+    End Sub
+    Private Sub Title5_Click(sender As Object, e As EventArgs) Handles title5.Click
+        select_row(5)
+    End Sub
+
+    Private Sub Count5_Click(sender As Object, e As EventArgs) Handles count5.Click
+        select_row(5)
+    End Sub
+    Private Sub Title6_Click(sender As Object, e As EventArgs) Handles title6.Click
+        select_row(6)
+    End Sub
+
+    Private Sub Count6_Click(sender As Object, e As EventArgs) Handles count6.Click
+        select_row(6)
+    End Sub
+    Private Sub Title7_Click(sender As Object, e As EventArgs) Handles title7.Click
+        select_row(7)
+    End Sub
+
+    Private Sub Count7_Click(sender As Object, e As EventArgs) Handles count7.Click
+        select_row(7)
+    End Sub
+    Private Sub Title8_Click(sender As Object, e As EventArgs) Handles title8.Click
+        select_row(8)
+    End Sub
+
+    Private Sub Count8_Click(sender As Object, e As EventArgs) Handles count8.Click
+        select_row(8)
+    End Sub
+    Private Sub Title9_Click(sender As Object, e As EventArgs) Handles title9.Click
+        select_row(9)
+    End Sub
+
+    Private Sub Count9_Click(sender As Object, e As EventArgs) Handles count9.Click
+        select_row(9)
+    End Sub
+    Private Sub Title10_Click(sender As Object, e As EventArgs) Handles title10.Click
+        select_row(10)
+    End Sub
+
+    Private Sub Count10_Click(sender As Object, e As EventArgs) Handles count10.Click
+        select_row(10)
+    End Sub
+    Private Sub Title11_Click(sender As Object, e As EventArgs) Handles title11.Click
+        select_row(11)
+    End Sub
+
+    Private Sub Count11_Click(sender As Object, e As EventArgs) Handles count11.Click
+        select_row(11)
+    End Sub
+    Private Sub Title12_Click(sender As Object, e As EventArgs) Handles title12.Click
+        select_row(12)
+    End Sub
+
+    Private Sub Count12_Click(sender As Object, e As EventArgs) Handles count12.Click
+        select_row(12)
+    End Sub
+    Private Sub Title13_Click(sender As Object, e As EventArgs) Handles title13.Click
+        select_row(13)
+    End Sub
+
+    Private Sub Count13_Click(sender As Object, e As EventArgs) Handles count13.Click
+        select_row(13)
+    End Sub
+    Private Sub Title14_Click(sender As Object, e As EventArgs) Handles title14.Click
+        select_row(14)
+    End Sub
+
+    Private Sub Count14_Click(sender As Object, e As EventArgs) Handles count14.Click
+        select_row(14)
+    End Sub
+
 End Class

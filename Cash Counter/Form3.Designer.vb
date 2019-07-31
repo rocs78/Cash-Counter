@@ -433,7 +433,7 @@ Partial Class Form3
         Me.title7.BackColor = System.Drawing.Color.White
         Me.title7.Font = New System.Drawing.Font("Gill Sans MT", 12.0!, System.Drawing.FontStyle.Bold)
         Me.title7.ForeColor = System.Drawing.Color.Black
-        Me.title7.Location = New System.Drawing.Point(75, 446)
+        Me.title7.Location = New System.Drawing.Point(75, 445)
         Me.title7.Name = "title7"
         Me.title7.Size = New System.Drawing.Size(144, 26)
         Me.title7.TabIndex = 96
@@ -455,7 +455,7 @@ Partial Class Form3
         Me.count6.BackColor = System.Drawing.Color.White
         Me.count6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.count6.ForeColor = System.Drawing.Color.DimGray
-        Me.count6.Location = New System.Drawing.Point(76, 414)
+        Me.count6.Location = New System.Drawing.Point(75, 414)
         Me.count6.Name = "count6"
         Me.count6.Size = New System.Drawing.Size(144, 26)
         Me.count6.TabIndex = 94
@@ -886,6 +886,9 @@ Partial Class Form3
         Me.total_info.Size = New System.Drawing.Size(772, 56)
         Me.total_info.TabIndex = 143
         Me.total_info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PrintDocument1
+        '
         '
         'Form3
         '
