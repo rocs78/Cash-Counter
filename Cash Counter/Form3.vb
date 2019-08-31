@@ -3,7 +3,7 @@ Public Class Form3
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         select_row(1)
         Me.Text = "Cash Count  v" & My.Application.Info.Version.Major.ToString & "." & My.Application.Info.Version.Minor.ToString & "." & My.Application.Info.Version.Revision.ToString
-
+        GlobalVariables.float = 450
     End Sub
     Public Class GlobalVariables
         Public Shared note_100 As Integer
@@ -21,6 +21,7 @@ Public Class Form3
         Public Shared cheque As Decimal
         Public Shared pos As Decimal
         Public Shared total As Decimal
+        Public Shared float As Decimal
     End Class
 
     Private Sub calculateit()
@@ -40,6 +41,7 @@ Public Class Form3
         calc = calc + GlobalVariables.cheque
         GlobalVariables.total = calc
         calc = calc - GlobalVariables.pos
+        calc = calc - GlobalVariables.float
 
         If calc > 0 Then
             total_info.Text = "You are OVER by " & String.Format("{0:C2}", CDec(calc))
@@ -242,6 +244,10 @@ Public Class Form3
         If cashcount1.Text.Length = 0 Then
             cashcount1.Text = "0"
         End If
+    End Sub
+    Private Sub Label5_Click_1(sender As Object, e As EventArgs) Handles Label5.Click
+        If cashcount1.Text = "0" Then cashcount1.Text = ""
+        cashcount1.Text = cashcount1.Text + "-"
     End Sub
     Private Sub add_new()
         If Label1.Text = "ENTER THE NUMBER OF $100 NOTES" Then
@@ -452,7 +458,7 @@ Public Class Form3
     End Sub
 
     Private Sub PictureBox17_Click(sender As Object, e As EventArgs) Handles PictureBox17.Click
-        reset_all()
+        GlobalVariables.float = InputBox("Enter the new Float Amount:", "Change Float", "450", -1, -1)
     End Sub
 
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
@@ -501,8 +507,8 @@ Public Class Form3
         Dim blackPen As New Pen(Color.Black, 2)
         Dim point1 As New Point(0, 155)
         Dim point2 As New Point(275, 155)
-        Dim point3 As New Point(0, 575)
-        Dim point4 As New Point(275, 575)
+        Dim point3 As New Point(0, 620)
+        Dim point4 As New Point(275, 620)
         Dim left1 As Integer = 10
         Dim right1 As Integer = 130
         Dim ReportFontBold As Font = New Drawing.Font("Calibri", 14, FontStyle.Bold)
@@ -587,28 +593,32 @@ Public Class Form3
         e.Graphics.DrawString("POS Amount", ReportFontBold, Brushes.Black, left1, lineheight)
         e.Graphics.DrawString(String.Format("{0:C2}", CDec(GlobalVariables.pos * 1)), ReportFont, Brushes.Black, left1 + 170, lineheight)
         lineheight = lineheight + 20
+        lineheight = lineheight + 20
+        e.Graphics.DrawString("Float Amount", ReportFontBold, Brushes.Black, left1, lineheight)
+        e.Graphics.DrawString(String.Format("{0:C2}", CDec(GlobalVariables.float * 1)), ReportFont, Brushes.Black, left1 + 170, lineheight)
+        lineheight = lineheight + 20
         lineheight = lineheight + 10
         e.Graphics.DrawString("Difference +/-", ReportFontBold, Brushes.Black, left1, lineheight)
-        e.Graphics.DrawString(String.Format("{0:C2}", CDec(GlobalVariables.total - GlobalVariables.pos)), ReportFont, Brushes.Black, left1 + 170, lineheight)
+        e.Graphics.DrawString(String.Format("{0:C2}", CDec(GlobalVariables.total - GlobalVariables.pos - GlobalVariables.float)), ReportFont, Brushes.Black, left1 + 170, lineheight)
         lineheight = lineheight + 20
-        If GlobalVariables.total - GlobalVariables.pos = 0 Then
+        If GlobalVariables.total - GlobalVariables.pos - GlobalVariables.float = 0 Then
             e.Graphics.DrawString("Balanced", ReportFontBold, Brushes.Black, left1 + 170, lineheight)
         End If
-        If GlobalVariables.total - GlobalVariables.pos < 0 Then
+        If GlobalVariables.total - GlobalVariables.pos - GlobalVariables.float < 0 Then
             e.Graphics.DrawString("Short", ReportFontBold, Brushes.Black, left1 + 170, lineheight)
         End If
-        If GlobalVariables.total - GlobalVariables.pos > 0 Then
+        If GlobalVariables.total - GlobalVariables.pos - GlobalVariables.float > 0 Then
             e.Graphics.DrawString("Over", ReportFontBold, Brushes.Black, left1 + 170, lineheight)
         End If
-        lineheight = lineheight + 20
+        lineheight = lineheight + 30
         e.Graphics.DrawLine(blackPen, point3, point4)
-        e.Graphics.DrawString(" ", ReportFontBold, Brushes.Black, left1 + 170, 620)
+        e.Graphics.DrawString(" ", ReportFontBold, Brushes.Black, left1 + 170, lineheight)
     End Sub
     Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
         If total_info.Text <> " " Then
             Dim printerName As String
-            'printerName = "SAM4S ELLIX30"
-            printerName = "EPSON TM-T88V Receipt"
+            printerName = "SAM4S ELLIX30"
+            'printerName = "EPSON TM-T88V Receipt"
             PrintDocument1.PrinterSettings.PrinterName = printerName
             PrintDocument1.Print()
         Else
@@ -717,5 +727,6 @@ Public Class Form3
     Private Sub Count14_Click(sender As Object, e As EventArgs) Handles count14.Click
         select_row(14)
     End Sub
+
 
 End Class
