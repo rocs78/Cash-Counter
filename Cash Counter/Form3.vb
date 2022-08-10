@@ -11,6 +11,7 @@ Public Class Form3
 
         For Each m_node In m_nodelist
             GlobalVariables.float = m_node.Element("float").Value
+            GlobalVariables.printer_name = m_node.Element("printer").Value
         Next
 
     End Sub
@@ -31,6 +32,7 @@ Public Class Form3
         Public Shared pos As Decimal
         Public Shared total As Decimal
         Public Shared float As Decimal
+        Public Shared printer_name As String
     End Class
 
     Private Sub calculateit()
@@ -625,10 +627,11 @@ Public Class Form3
     End Sub
     Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
         If total_info.Text <> " " Then
-            Dim printerName As String
-            printerName = "SAM4S ELLIX30"
+            'Dim printerName As String
+            'printerName = GlobalVariables.printer_name
+            'printerName = "SAM4S ELLIX30"
             'printerName = "EPSON TM-T88V Receipt"
-            PrintDocument1.PrinterSettings.PrinterName = printerName
+            PrintDocument1.PrinterSettings.PrinterName = GlobalVariables.printer_name
             PrintDocument1.Print()
         Else
             MsgBox("You need to balance the POS before printing")

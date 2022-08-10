@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-<Float>
-    <Text>500</Text>
-</Float>
-
-
-
-</root>
+<?xml version="1.0" standalone="yes"?><mailmanager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<locations>
+<store id="c35e549f-ffb8-4828-8290-d66c2f9b735f">
+<float>500</float>
+<printer>SAM4S ELLIX30</printer>
+</store>
+</locations>
+</mailmanager>
