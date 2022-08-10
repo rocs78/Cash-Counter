@@ -1,9 +1,18 @@
 ﻿Imports System.Deployment.Application
 Public Class Form3
+
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         select_row(1)
         Me.Text = "Cash Count  v" & My.Application.Info.Version.Major.ToString & "." & My.Application.Info.Version.Minor.ToString & "." & My.Application.Info.Version.Revision.ToString
-        GlobalVariables.float = 450
+
+        Dim i As Integer
+        Dim m_xmld = XDocument.Load("settings.xml")
+        Dim m_nodelist = m_xmld.Descendants("store")
+
+        For Each m_node In m_nodelist
+            GlobalVariables.float = m_node.Element("float").Value
+        Next
+
     End Sub
     Public Class GlobalVariables
         Public Shared note_100 As Integer
@@ -458,7 +467,7 @@ Public Class Form3
     End Sub
 
     Private Sub PictureBox17_Click(sender As Object, e As EventArgs) Handles PictureBox17.Click
-        GlobalVariables.float = InputBox("Enter the new Float Amount:", "Change Float", "450", -1, -1)
+        GlobalVariables.float = InputBox("Enter the new Float Amount:", "Change Float", GlobalVariables.float, -1, -1)
     End Sub
 
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
